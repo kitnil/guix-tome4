@@ -109,3 +109,48 @@ Maj'Eyal roguelike game.")
     (description "This package provides an Embers of Rage DLC for Tales of
 Maj'Eyal roguelike game.")
     (license license:gpl3+)))
+
+(define-public tome4-forbidden-cults
+  (package
+    (name "tome4-forbidden-cults")
+    (version "1.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (and=> (getenv "HOME")
+                   (lambda (home)
+                     (string-append
+                      "file://" home
+                      "/Downloads"
+                      "/tales_of_maj_eyal_forbidden_cults_1_6_4_34357.sh"))))
+       (file-name (string-append name "-" version))
+       (sha256
+        (base32
+         "112flf1h8rns4gdn7qvwx86fij004v7qfwd258s9ll5w41gz3myg"))))
+    (build-system trivial-build-system)
+    (inputs
+     `(("gogextract" ,gogextract)))
+    (native-inputs
+     `(("unzip" ,unzip)))
+    (arguments
+     `(#:modules ((guix build utils))
+       #:builder
+       (begin
+         (let ((file-name (string-append ,name "-" ,version ".sh")))
+           (use-modules (guix build utils))
+           (setenv "PATH"
+                   (string-append
+                    (assoc-ref %build-inputs "gogextract") "/bin" ":"
+                    (assoc-ref %build-inputs "unzip") "/bin"))
+           (copy-file (assoc-ref %build-inputs "source") file-name)
+           (invoke "gogextract" file-name ".")
+           (invoke "unzip" "data.zip")
+           (install-file
+            "data/noarch/game/t-engine4-linux64/game/addons/cults.teaac"
+            %output)
+           #t))))
+    (home-page "https://www.gog.com/game/tales_of_majeyal_forbidden_cults")
+    (synopsis "Forbidden Cults DLC for Tales of Maj'Eyal game")
+    (description "This package provides a Forbidden Cults DLC for Tales of
+Maj'Eyal roguelike game.")
+    (license license:gpl3+)))
