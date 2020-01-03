@@ -5,10 +5,12 @@
 (define-module (tome4 packages tome4)
   #:use-module ((guix licenses) #:prefix license:)
   #:use-module (gnu packages compression)
+  #:use-module (gnu packages games)
   #:use-module (gnu packages)
   #:use-module (guix build-system trivial)
   #:use-module (guix download)
   #:use-module (guix packages)
+  #:use-module (guix utils)
   #:use-module (tome4 packages gogextract))
 
 ;;; Commentary:
@@ -154,3 +156,39 @@ Maj'Eyal roguelike game.")
     (description "This package provides a Forbidden Cults DLC for Tales of
 Maj'Eyal roguelike game.")
     (license license:gpl3+)))
+
+(define-public tome4-with-addons
+  (package
+    (inherit tome4)
+    (name "tome4-with-addons")
+    (version (package-version tome4))
+    (inputs
+     `(("tome4-ashes-urhrok" ,tome4-ashes-urhrok)
+       ("tome4-embers-of-rage" ,tome4-embers-of-rage)
+       ("tome4-forbidden-cults" ,tome4-forbidden-cults)
+       ,@(package-inputs tome4)))
+    (native-inputs
+     `(("zip" ,zip)
+       ,@(package-native-inputs tome4)))
+    (arguments
+     (substitute-keyword-arguments
+         (package-arguments tome4)
+       ((#:phases phases)
+        `(modify-phases ,phases
+           (add-after 'install 'install-addons
+             (lambda* (#:key inputs outputs #:allow-other-keys)
+               (let ((addons (string-append
+                              (assoc-ref outputs "out")
+                              "/share/tome4/game/addons")))
+                 (install-file
+                  (string-append (assoc-ref inputs "tome4-ashes-urhrok")
+                                 "/ashes-urhrok.teaac")
+                  addons)
+                 (install-file
+                  (string-append (assoc-ref inputs "tome4-embers-of-rage")
+                                 "/orcs.teaac")
+                  addons)
+                 (install-file
+                  (string-append (assoc-ref inputs "tome4-forbidden-cults")
+                                 "/cults.teaac")
+                  addons))))))))))
