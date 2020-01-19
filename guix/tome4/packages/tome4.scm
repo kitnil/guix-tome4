@@ -25,7 +25,7 @@
 (define-public tome4-ashes-urhrok
   (package
     (name "tome4-ashes-urhrok")
-    (version "1.6.4")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
@@ -34,11 +34,11 @@
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_ashes_of_urh_rok_1_6_4_34357.sh"))))
+                      "/tales_of_maj_eyal_ashes_of_urh_rok_1_6_6_35363.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
-         "1h2prb7kks9yw0b125dmgmvj5vm5gfyns1jnfnkkh8lr1dnjixa9"))))
+         "1di6wqlk9gssiscd7r9jc75pdzlz719zmix41484csa7987h3yvw"))))
     (build-system trivial-build-system)
     (inputs
      `(("gogextract" ,gogextract)))
@@ -70,7 +70,7 @@ Maj'Eyal roguelike game.")
 (define-public tome4-embers-of-rage
   (package
     (name "tome4-embers-of-rage")
-    (version "1.6.4")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
@@ -79,11 +79,11 @@ Maj'Eyal roguelike game.")
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_embers_of_rage_1_6_4_34357.sh"))))
+                      "/tales_of_maj_eyal_embers_of_rage_1_6_6_35363.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
-         "05lqw1h8f1983a96kxwg5py6qawnjzrmbs0jfq500dw0wrf3r8b1"))))
+         "145ycc3c0m6wgywpm6l2ijqa712z9cfx1v9lsjkndbxi942jai4q"))))
     (build-system trivial-build-system)
     (inputs
      `(("gogextract" ,gogextract)))
@@ -115,7 +115,7 @@ Maj'Eyal roguelike game.")
 (define-public tome4-forbidden-cults
   (package
     (name "tome4-forbidden-cults")
-    (version "1.6.4")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
@@ -124,11 +124,11 @@ Maj'Eyal roguelike game.")
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_forbidden_cults_1_6_4_34357.sh"))))
+                      "/tales_of_maj_eyal_forbidden_cults_1_6_6_35363.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
-         "112flf1h8rns4gdn7qvwx86fij004v7qfwd258s9ll5w41gz3myg"))))
+         "0kmj67kl8rbg43c3qfar0vfngmmclgmlrbzf5dspjsixi23khw0j"))))
     (build-system trivial-build-system)
     (inputs
      `(("gogextract" ,gogextract)))
