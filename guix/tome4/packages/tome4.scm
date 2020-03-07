@@ -25,7 +25,7 @@
 (define-public tome4-ashes-urhrok
   (package
     (name "tome4-ashes-urhrok")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
@@ -34,7 +34,7 @@
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_ashes_of_urh_rok_1_6_6_35363.sh"))))
+                      "/tales_of_maj_eyal_ashes_of_urh_rok_1_6_7_36467.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
@@ -70,7 +70,7 @@ Maj'Eyal roguelike game.")
 (define-public tome4-embers-of-rage
   (package
     (name "tome4-embers-of-rage")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
@@ -79,7 +79,7 @@ Maj'Eyal roguelike game.")
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_embers_of_rage_1_6_6_35363.sh"))))
+                      "/tales_of_maj_eyal_embers_of_rage_1_6_7_36467.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
@@ -115,7 +115,7 @@ Maj'Eyal roguelike game.")
 (define-public tome4-forbidden-cults
   (package
     (name "tome4-forbidden-cults")
-    (version "1.6.6")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
@@ -124,7 +124,7 @@ Maj'Eyal roguelike game.")
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_forbidden_cults_1_6_6_35363.sh"))))
+                      "/tales_of_maj_eyal_forbidden_cults_1_6_7_36467.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
