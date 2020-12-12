@@ -25,7 +25,7 @@
 (define-public tome4-ashes-urhrok
   (package
     (name "tome4-ashes-urhrok")
-    (version "1.6.7")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
@@ -34,11 +34,11 @@
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_ashes_of_urh_rok_1_6_7_36467.sh"))))
+                      "/tales_of_maj_eyal_ashes_of_urh_rok_1_7_2_42760.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
-         "1di6wqlk9gssiscd7r9jc75pdzlz719zmix41484csa7987h3yvw"))))
+         "05kzzd6gc37iakv7840rqxyirfbpz6126fn3k48r5a6lsfqw9wma"))))
     (build-system trivial-build-system)
     (inputs
      `(("gogextract" ,gogextract)))
@@ -58,7 +58,7 @@
            (invoke "gogextract" file-name ".")
            (invoke "unzip" "data.zip")
            (install-file
-            "data/noarch/game/t-engine4-linux64/game/addons/ashes-urhrok.teaac"
+            "data/noarch/game/game/addons/ashes-urhrok.teaac"
             %output)
            #t))))
     (home-page "https://www.gog.com/game/tales_of_majeyal_ashes_of_urhrok")
@@ -70,7 +70,7 @@ Maj'Eyal roguelike game.")
 (define-public tome4-embers-of-rage
   (package
     (name "tome4-embers-of-rage")
-    (version "1.6.7")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
@@ -79,11 +79,11 @@ Maj'Eyal roguelike game.")
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_embers_of_rage_1_6_7_36467.sh"))))
+                      "/tales_of_maj_eyal_embers_of_rage_1_7_2_42760.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
-         "145ycc3c0m6wgywpm6l2ijqa712z9cfx1v9lsjkndbxi942jai4q"))))
+         "0scf97g35an7bjdqi9vw7fz7kx247r45fqknmmxxfqvnrkr5a7g3"))))
     (build-system trivial-build-system)
     (inputs
      `(("gogextract" ,gogextract)))
@@ -103,7 +103,7 @@ Maj'Eyal roguelike game.")
            (invoke "gogextract" file-name ".")
            (invoke "unzip" "data.zip")
            (install-file
-            "data/noarch/game/t-engine4-linux64/game/addons/orcs.teaac"
+            "data/noarch/game/game/addons/orcs.teaac"
             %output)
            #t))))
     (home-page "https://www.gog.com/game/tales_of_majeyal_embers_of_rage")
@@ -115,7 +115,7 @@ Maj'Eyal roguelike game.")
 (define-public tome4-forbidden-cults
   (package
     (name "tome4-forbidden-cults")
-    (version "1.6.7")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
@@ -124,11 +124,11 @@ Maj'Eyal roguelike game.")
                      (string-append
                       "file://" home
                       "/Downloads"
-                      "/tales_of_maj_eyal_forbidden_cults_1_6_7_36467.sh"))))
+                      "/tales_of_maj_eyal_forbidden_cults_1_7_2_42760.sh"))))
        (file-name (string-append name "-" version))
        (sha256
         (base32
-         "0kmj67kl8rbg43c3qfar0vfngmmclgmlrbzf5dspjsixi23khw0j"))))
+         "0wj7z0fzdz3amh2vf2jg82byx5i8isk0kzp8spmr9b0wzb3x2hac"))))
     (build-system trivial-build-system)
     (inputs
      `(("gogextract" ,gogextract)))
@@ -148,7 +148,7 @@ Maj'Eyal roguelike game.")
            (invoke "gogextract" file-name ".")
            (invoke "unzip" "data.zip")
            (install-file
-            "data/noarch/game/t-engine4-linux64/game/addons/cults.teaac"
+            "data/noarch/game/game/addons/cults.teaac"
             %output)
            #t))))
     (home-page "https://www.gog.com/game/tales_of_majeyal_forbidden_cults")
